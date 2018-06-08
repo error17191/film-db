@@ -23,6 +23,7 @@ body {
     transition: box-shadow .1s ease-in-out;
     font-size: 40px;
     color: #fff;
+    cursor: pointer;
 }
 
 .button span {
@@ -45,9 +46,17 @@ body {
     -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
     -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
     transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .button:hover span {
+    cursor: pointer;
     background-color: #ec6a9c;
     text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
 }
