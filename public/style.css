@@ -21,7 +21,7 @@ body {
     -moz-transition: -moz-box-shadow .1s ease-in-out;
     -o-transition: -o-box-shadow .1s ease-in-out;
     transition: box-shadow .1s ease-in-out;
-    font-size: 40px;
+    font-size: 32px;
     color: #fff;
     cursor: pointer;
 }
