@@ -8,7 +8,7 @@ $url = 'https://www.elcinema.com/index/country/eg?page=';
 
 $stats = json_decode(file_get_contents('./stats.json'));
 
-$films = json_decode(file_get_contents('./films-v0.1.json'));
+$films = json_decode(file_get_contents('./films.json'));
 
 
 $client = new Client();
@@ -32,7 +32,7 @@ for ($i = $stats->last_page + 1; true; $i++) {
 
         $type = mb_strlen($tds->eq(2)->text());
 
-        if ($type == 4) { // movie
+        if ($type == 4) { // is a film ?
             $stats->films_count++;
             $pageFilms++;
 
@@ -43,16 +43,20 @@ for ($i = $stats->last_page + 1; true; $i++) {
                 ->eq(1)->attr('href');
             $pathParts = explode('/', $path);
 
-            $uid = $pathParts[2];
+            $uid = (int) $pathParts[2];
 
-            $year = $tds->eq(3)->text();
+            $year = (int) $tds->eq(3)->text();
+
+            if($year < 1918){
+                return;
+            }
 
             $films[] = compact('name', 'year', 'uid');
             echo "Found a film : {$name}\n";
         }
     });
     $stats->last_page++;
-    file_put_contents('./films-v0.1.json', json_encode($films, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    file_put_contents('./films.json', json_encode($films, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
     file_put_contents('./stats.json', json_encode($stats, JSON_PRETTY_PRINT));
     echo "Saved {$pageFilms} film(s) from page #{$i}\n";
 }
