@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+}
+
 body {
     text-align: center;
     background-color: bisque;
@@ -70,4 +74,21 @@ body {
 
 #film-year {
     color: #ec528d;
+}
+
+footer{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(239, 95, 150, 0.8);
+    bottom: 0;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+footer p a{
+    color: #ffffff;
 }
