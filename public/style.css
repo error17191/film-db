@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
 }
 
@@ -67,13 +67,12 @@ body {
     box-shadow: 0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
 }
 
-.button:active span,.button.loading span {
+.button:active span, .button.loading span {
     -webkit-transform: translate(0, 4px);
     -moz-transform: translate(0, 4px);
     -o-transform: translate(0, 4px);
     transform: translate(0, 4px);
 }
-
 
 #film-name {
     color: #ec528d;
@@ -85,7 +84,7 @@ body {
     color: #ec528d;
 }
 
-footer{
+footer {
     position: fixed;
     height: 50px;
     width: 100%;
@@ -98,6 +97,21 @@ footer p {
     color: #ffffff;
 }
 
-footer p a{
+footer p a {
     color: #ffffff;
+}
+#report-container{
+    display: none;
+}
+#report-container .report-sent{
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+#report-container .report-sending{
+    color: #f36e08;
+    font-weight: bold;
+    display: none;
+    direction: rtl;
 }
