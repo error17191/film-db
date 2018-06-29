@@ -7,7 +7,11 @@ body {
     background-color: bisque;
     font-family: 'Cairo', sans-serif;
 }
-
+.btn-container{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 .button {
     display: inline-block;
     margin: 50px;
@@ -74,6 +78,13 @@ body {
     transform: translate(0, 4px);
 }
 
+.undo{
+    position: absolute;
+    top: 75px;
+    cursor: pointer;
+    visibility: hidden;
+    color: #c5376d;
+}
 
 #film-name {
     color: #ec528d;
