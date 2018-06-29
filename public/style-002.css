@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
 }
 
@@ -7,11 +7,13 @@ body {
     background-color: bisque;
     font-family: 'Cairo', sans-serif;
 }
-.btn-container{
+
+.btn-container {
     position: relative;
     margin: 0;
     padding: 0;
 }
+
 .button {
     display: inline-block;
     margin: 50px;
@@ -71,14 +73,14 @@ body {
     box-shadow: 0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
 }
 
-.button:active span,.button.loading span {
+.button:active span, .button.loading span {
     -webkit-transform: translate(0, 4px);
     -moz-transform: translate(0, 4px);
     -o-transform: translate(0, 4px);
     transform: translate(0, 4px);
 }
 
-.undo{
+.undo {
     position: absolute;
     top: 75px;
     cursor: pointer;
@@ -96,7 +98,7 @@ body {
     color: #ec528d;
 }
 
-footer{
+footer {
     position: fixed;
     height: 50px;
     width: 100%;
@@ -109,6 +111,19 @@ footer p {
     color: #ffffff;
 }
 
-footer p a{
+footer p a {
     color: #ffffff;
+}
+
+.report-container {
+    display: none;
+}
+
+.report-sending {
+    direction: rtl;
+    color: coral;
+}
+
+.report-sent {
+    color: green;
 }
