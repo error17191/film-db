@@ -14,13 +14,12 @@ foreach ($films as $film) {
         $reports = json_decode(file_get_contents('../data/reports.json'));
         $reports[] = $film;
 
-        file_put_contents('../data/reports.json',
-            json_encode($reports,
-                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
-        );
 
         echo json_encode([
-            'success' => true
+            'success' => false === file_put_contents('../data/reports.json',
+                    json_encode($reports,
+                        JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+                )
         ]);
         exit;
     }
