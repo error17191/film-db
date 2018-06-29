@@ -6,9 +6,9 @@ use Goutte\Client;
 
 $url = 'https://www.elcinema.com/index/country/eg?page=';
 
-$stats = json_decode(file_get_contents('./stats.json'));
+$stats = json_decode(file_get_contents('data/stats.json'));
 
-$films = json_decode(file_get_contents('./films.json'));
+$films = json_decode(file_get_contents('data/films.json'));
 
 
 $client = new Client();
@@ -56,8 +56,8 @@ for ($i = $stats->last_page + 1; true; $i++) {
         }
     });
     $stats->last_page++;
-    file_put_contents('./films.json', json_encode($films, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
-    file_put_contents('./stats.json', json_encode($stats, JSON_PRETTY_PRINT));
+    file_put_contents('data/films.json', json_encode($films, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    file_put_contents('data/stats.json', json_encode($stats, JSON_PRETTY_PRINT));
     echo "Saved {$pageFilms} film(s) from page #{$i}\n";
 }
 

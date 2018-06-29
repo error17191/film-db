@@ -7,14 +7,14 @@ if (!isset($data['film']) || !($uid = trim($data['film']))) {
     exit;
 }
 
-$films = json_decode(file_get_contents('../films.json'));
+$films = json_decode(file_get_contents('../data/films.json'));
 
 foreach ($films as $film) {
     if ($film->uid == $uid) {
-        $reports = json_decode(file_get_contents('../reports.json'));
+        $reports = json_decode(file_get_contents('../data/reports.json'));
         $reports[] = $film;
 
-        file_put_contents('../reports.json',
+        file_put_contents('../data/reports.json',
             json_encode($reports,
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
         );
