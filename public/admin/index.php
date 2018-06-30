@@ -4,7 +4,7 @@ if(! isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
     header('location: /login');
 }
 
-
+$reports = array_reverse(json_decode(file_get_contents('../../data/reports.json')));
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,7 +15,7 @@ if(! isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>اختارلي فيلم</title>
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-    <link rel="stylesheet" href="../style-002.css">
+    <link rel="stylesheet" href="../style-003.css">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
             integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
             crossorigin="anonymous"></script>
@@ -23,14 +23,16 @@ if(! isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
 <body>
 <h2>عاوز تمسح الأفلام دي؟</h2>
 <br>
+<?php foreach ($reports as $report) : ?>
 <div class="report-block">
     <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
+        <h3><a href="https://www.elcinema.com/work/<?php echo $film->uid;?>"><?php echo $report->name; ?></a>
+        </h3>
     </div>
     <div class="film-year">
-        <h3>1995</h3>
+        <h3><?php echo $report->year ; ?></h3>
+        <?php if($report->count > 1) echo "<span onclick='showTooltip()' class='rounded-label'>{$report->count}</span>" ?>
     </div>
-    <br>
     <div>
         <div class="btn-left">
             <button class="btn">لا</button>
@@ -40,204 +42,7 @@ if(! isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
         </div>
     </div>
 </div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
-
-<div class="report-block">
-    <div class="film-name">
-        <h3>البحث عن فضيحة</h3>
-    </div>
-    <div class="film-year">
-        <h3>1995</h3>
-    </div>
-    <br>
-    <div>
-        <div class="btn-left">
-            <button>لا</button>
-        </div>
-        <div class="btn-right">
-            <button>نعم</button>
-        </div>
-    </div>
-</div>
+<?php endforeach; ?>
 
 <footer>
     <p>
@@ -246,5 +51,6 @@ if(! isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
 </footer>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="admin.js"></script>
 </body>
 </html>

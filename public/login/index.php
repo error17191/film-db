@@ -2,7 +2,7 @@
 session_start();
 
 if ((isset($_SESSION['logged']) && $_SESSION['logged'] === true)
-    || (isset($_POST['password']) && $_POST['password'] === '0126112405')) {
+    || (isset($_POST['password']) && $_POST['password'] === 'elmortafea3rel7la')) {
     $_SESSION['logged'] = true;
     header('location: /admin');
     exit();
@@ -17,7 +17,7 @@ if ((isset($_SESSION['logged']) && $_SESSION['logged'] === true)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>اختارلي فيلم</title>
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-    <link rel="stylesheet" href="../style-002.css">
+    <link rel="stylesheet" href="../style-003.css">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
             integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
             crossorigin="anonymous"></script>
