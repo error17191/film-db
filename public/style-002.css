@@ -127,3 +127,60 @@ footer p a {
 .report-sent {
     color: green;
 }
+
+.report-block {
+    width: 700px;
+    border-radius: 30px;
+    min-height: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.report-block .film-name {
+    color: #ec528d;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.report-block .film-year {
+    color: #ec528d;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.btn-left, .btn-right {
+    float: left;
+    width: 50%;
+}
+
+.btn {
+    font-size: 25px;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #ec528d;
+    color: white;
+}
+
+.btn-left button {
+    background-color: black;
+    color: white;
+}
+
+.btn-left {
+    text-align: left;
+}
+
+.btn-right {
+    text-align: right;
+}
+input.password{
+    padding: 10px;
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+}
+.login{
+    margin-top: 20px;
+}
