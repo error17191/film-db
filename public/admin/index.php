@@ -24,7 +24,7 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
 <h2>عاوز تمسح الأفلام دي؟</h2>
 <br>
 <?php foreach ($reports as $report) : ?>
-<div class="report-block">
+<div class="report-block" id="uid-<?php echo $report->uid; ?>">
     <div class="film-name">
         <h3><a href="https://www.elcinema.com/work/<?php echo $film->uid;?>"><?php echo $report->name; ?></a>
         </h3>

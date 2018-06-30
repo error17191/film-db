@@ -3,9 +3,10 @@ function showTooltip() {
 }
 
 function ignoreFilm(uid){
-    console.log(uid);
     axios.post('ignore.php',{uid: uid}).then(function (response){
-        console.log(response.data.success);
+        if(response.data.success){
+            document.getElementById('uid-'+uid).remove();
+        }
     });
 }
 

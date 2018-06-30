@@ -22,7 +22,7 @@ for ($i = 0; $i < count($reports); $i++) {
                         JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
                 )
         ]);
-        
+
         exit;
     }
 }
