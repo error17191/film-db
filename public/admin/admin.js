@@ -4,8 +4,13 @@ function showTooltip() {
 
 function ignoreFilm(uid){
     console.log(uid);
+    axios.post('ignore.php',{uid: uid}).then(function (response){
+        console.log(response.data.success);
+    });
 }
 
-function ignoreFilm(uid){
-    console.log(uid);
+function removeFilm(uid){
+    axios.post('remove.php',{uid: uid}).then(function (){
+
+    });
 }

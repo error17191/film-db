@@ -1,12 +1,14 @@
 <?php
-
-if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
-    exit();
-}
+session_start();
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$uid = $data->uid;
+if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true
+    || !isset($data['uid'])) {
+    exit();
+}
+
+$uid = $data['uid'];
 
 $reports = json_decode(file_get_contents('../../data/reports.json'));
 $films = json_decode(file_get_contents('../../data/films.json'));
