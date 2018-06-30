@@ -35,10 +35,10 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
     </div>
     <div>
         <div class="btn-left">
-            <button class="btn">لا</button>
+            <button class="btn" onclick="ignoreFilm('<?php echo $report->uid ?>')">لا</button>
         </div>
         <div class="btn-right">
-            <button class="btn">نعم</button>
+            <button class="btn" onclick="removeFilm('<?php echo $report->uid ?>')">نعم</button>
         </div>
     </div>
 </div>
