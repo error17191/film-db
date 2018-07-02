@@ -15,7 +15,7 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>اختارلي فيلم</title>
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-    <link rel="stylesheet" href="../style-003.css">
+    <link rel="stylesheet" href="../style-004.css">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
             integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
             crossorigin="anonymous"></script>
@@ -55,6 +55,6 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
 </footer>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="admin.js"></script>
+<script src="admin-01.js"></script>
 </body>
 </html>
