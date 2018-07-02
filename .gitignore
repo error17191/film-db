@@ -2,3 +2,4 @@ vendor/
 .idea/
 data/reports.json
 data/films.json
+data/password

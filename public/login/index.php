@@ -1,8 +1,10 @@
 <?php
 session_start();
 
+$password = file_get_contents('../../data/password');
+
 if ((isset($_SESSION['logged']) && $_SESSION['logged'] === true)
-    || (isset($_POST['password']) && $_POST['password'] === 'elmortafea3rel7la')) {
+    || (isset($_POST['password']) && $_POST['password'] == $password)) {
     $_SESSION['logged'] = true;
     header('location: /admin');
     exit();
