@@ -92,6 +92,7 @@ body {
     color: #ec528d;
     text-decoration: none;
     font-size: 25px;
+    direction: rtl;
 }
 
 #film-year {

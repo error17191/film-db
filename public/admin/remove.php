@@ -12,6 +12,7 @@ $uid = $data['uid'];
 
 $reports = json_decode(file_get_contents('../../data/reports.json'));
 $films = json_decode(file_get_contents('../../data/films.json'));
+
 $report_index = -1;
 $film_index = -1;
 
@@ -41,5 +42,10 @@ unset($reports[$report_index]);
 unset($films[$film_index]);
 
 echo json_encode([
-    'success' => true
+    'success' => false !== file_put_contents('../../data/reports.json',
+            json_encode(array_values($reports),
+                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE))
+        && false !== file_put_contents('../../data/films.json',
+            json_encode(array_values($films),
+                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE))
 ]);

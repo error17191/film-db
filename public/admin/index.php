@@ -30,7 +30,7 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
 <?php foreach ($reports as $report) : ?>
 <div class="report-block" id="uid-<?php echo $report->uid; ?>">
     <div class="film-name">
-        <h3><a href="https://www.elcinema.com/work/<?php echo $film->uid;?>"><?php echo $report->name; ?></a>
+        <h3><a target="_blank" href="https://www.elcinema.com/work/<?php echo $report->uid;?>"><?php echo $report->name; ?></a>
         </h3>
     </div>
     <div class="film-year">
@@ -39,10 +39,10 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
     </div>
     <div>
         <div class="btn-left">
-            <button class="btn" onclick="ignoreFilm('<?php echo $report->uid ?>')">لا</button>
+            <button class="btn" onclick="ignoreFilm('<?php echo $report->uid ?>',this)">لا</button>
         </div>
         <div class="btn-right">
-            <button class="btn" onclick="removeFilm('<?php echo $report->uid ?>')">نعم</button>
+            <button class="btn" onclick="removeFilm('<?php echo $report->uid ?>',this)">نعم</button>
         </div>
     </div>
 </div>
