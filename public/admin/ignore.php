@@ -18,7 +18,7 @@ for ($i = 0; $i < count($reports); $i++) {
 
         echo json_encode([
             'success' => false !== file_put_contents('../../data/reports.json',
-                    json_encode($reports,
+                    json_encode(array_values($reports),
                         JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
                 )
         ]);

@@ -21,7 +21,11 @@ $reports = array_reverse(json_decode(file_get_contents('../../data/reports.json'
             crossorigin="anonymous"></script>
 </head>
 <body>
+<?php if(count($reports) == 0): ?>
+<h2 class="no-films">مفيش افلام متبلغ عنها</h2>
+<?php else: ?>
 <h2>عاوز تمسح الأفلام دي؟</h2>
+<?php endif; ?>
 <br>
 <?php foreach ($reports as $report) : ?>
 <div class="report-block" id="uid-<?php echo $report->uid; ?>">

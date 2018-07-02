@@ -212,6 +212,10 @@ input.password {
     border-radius: 50%;
 }
 
+.no-films{
+    margin-top:200px ;
+}
+
 @media (max-width: 770px) {
     .report-block {
         width: 450px;
