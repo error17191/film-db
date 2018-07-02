@@ -8,6 +8,12 @@ body {
     font-family: 'Cairo', sans-serif;
 }
 
+.btn-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 .button {
     display: inline-block;
     margin: 50px;
@@ -74,6 +80,14 @@ body {
     transform: translate(0, 4px);
 }
 
+.undo {
+    position: absolute;
+    top: 75px;
+    cursor: pointer;
+    visibility: hidden;
+    color: #c5376d;
+}
+
 #film-name {
     color: #ec528d;
     text-decoration: none;
@@ -100,18 +114,113 @@ footer p {
 footer p a {
     color: #ffffff;
 }
-#report-container{
-    display: none;
-}
-#report-container .report-sent{
-    color: green;
-    font-weight: bold;
+
+.report-container {
     display: none;
 }
 
-#report-container .report-sending{
-    color: #f36e08;
-    font-weight: bold;
-    display: none;
+.report-sending {
     direction: rtl;
+    color: coral;
+}
+
+.report-sent {
+    color: green;
+}
+
+.report-block {
+    width: 700px;
+    border-radius: 30px;
+    min-height: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 20px auto;
+    padding: 10px;
+    position: relative;
+
+}
+
+.report-block .film-name {
+    color: #ec528d;
+    font-weight: normal;
+    font-size: 20px;
+    direction: rtl;
+}
+.report-block .film-name a{
+    color: #ec528d;
+    text-decoration: none;
+}
+.report-block .film-year {
+    color: #ec528d;
+    font-weight: normal;
+    font-size: 12px;
+}
+.report-block .film-year .rounded-label{
+    cursor: pointer;
+    z-index: 100;
+    position: relative;
+}
+.btn-left, .btn-right {
+    width: 50%;
+    bottom: 15px;
+    position: absolute;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #ec528d;
+    color: white;
+    border: none;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-left button {
+    background-color: black;
+    color: white;
+}
+
+.btn-left {
+    left: 25px;
+    text-align: left;
+}
+
+.btn-right {
+    right: 25px;
+    text-align: right;
+}
+
+input.password {
+    padding: 10px;
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+}
+
+.login {
+    margin-top: 20px;
+}
+
+.rounded-label {
+    font-size: 13px;
+    color: white;
+    background-color: black;
+    padding: 0 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+@media (max-width: 770px) {
+    .report-block {
+        width: 450px;
+    }
+}
+
+@media (max-width: 450px) {
+    .report-block {
+        width: 80%;
+        min-height: 200px;
+    }
 }
