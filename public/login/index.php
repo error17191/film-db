@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$password = file_get_contents('../../data/password');
+$password = trim(file_get_contents('../../data/password'));
 
 if ((isset($_SESSION['logged']) && $_SESSION['logged'] === true)
     || (isset($_POST['password']) && $_POST['password'] == $password)) {
