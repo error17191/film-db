@@ -7,40 +7,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>اختارلي فيلم</title>
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-    <link rel="stylesheet" href="style-004.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style-005.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+            integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-<div class="btn-container">
-    <span class="undo">
+<div id="app">
+    <div class="btn-container">
+    <span @click.prevent="undo" class="undo" :style="{visibility: undoVisibility}">
         <i class="fas fa-undo fa-2x"></i>
     </span>
-    <a class="button" id="random-film">
-        <span>اختارلي فيلم</span>
-    </a>
-</div>
-<br>
-<a href="#" target="_blank" id="film-name"></a>
-<br>
-<span id="film-year"></span>
-<br>
-<br>
-<br>
-<br>
-<div class="report-container">
-    <div class="report-msg">
-        لو اسم الفيلم غلط او غريب بزيادة دوس
-        <a href="#" id="report-btn">هنا</a>
+        <a @click="clickedOnMainButton" :class="{button:true,loading:loadingFilm}" id="random-film">
+            <span>اختارلي فيلم</span>
+        </a>
     </div>
-    <div class="report-sending">جاري الإرسال ..</div>
-    <div class="report-sent">تم الإرسال</div>
+    <br>
+    <a v-if="currentFilm" :href="currentFilm.link" target="_blank" id="film-name">{{currentFilm.name}}</a>
+    <br>
+    <span v-if="currentFilm" id="film-year">{{currentFilm.year}}</span>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="report-container">
+        <div class="report-msg" v-if="currentFilm && !showReporting && !showReported">
+            لو اسم الفيلم غلط او غريب بزيادة دوس
+            <a href="#" id="report-btn" @click.prevent="report">هنا</a>
+        </div>
+        <div v-if="showReporting" class="report-sending">جاري الإرسال ..</div>
+        <div v-if="showReported" class="report-sent">تم الإرسال</div>
+    </div>
 </div>
 <footer>
     <p>
         Made for fun by @ <a target="_blank" href="https://facebook.com/error17191">Mohamed Ahmed</a>
     </p>
 </footer>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="app-002.js"></script>
+<script src="app-003.js"></script>
 </body>
 </html>

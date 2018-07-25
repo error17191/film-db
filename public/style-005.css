@@ -84,7 +84,6 @@ body {
     position: absolute;
     top: 75px;
     cursor: pointer;
-    visibility: hidden;
     color: #c5376d;
 }
 
@@ -114,10 +113,6 @@ footer p {
 
 footer p a {
     color: #ffffff;
-}
-
-.report-container {
-    display: none;
 }
 
 .report-sending {
