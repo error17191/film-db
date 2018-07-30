@@ -16,7 +16,7 @@ var app = new Vue({
         clickedOnMainButton() {
             this.lastFilm = this.currentFilm;
             this.loadingFilm = true;
-            axios.get('app.php').then(response => {
+            axios.get('app.php?c=' + Date.now()).then(response => {
                 this.showReporting = false;
                 this.showReported = false;
                 this.loadingFilm = false;
